@@ -355,21 +355,6 @@
                 i = 1 === d;
             0 !== d && setTimeout(g._updateImgs.pbind(t, i), 0)
         },
-        deselect: function (e, t, d) {
-            var i = cur.wdd[e];
-            if (i.disabled) return d ? cancelEvent(d) : void 0;
-            if (void 0 === t) {
-                for (var s in i.selCount = i.full = 0, i.arrow.style.visibility = "hidden", i.selected) delete i.selected[s];
-                val(i.bubbles, ""), i.text.blur(), hide(i.add), show(i.text), i.text.style.width = i.partWidth - i.textDelta - 2 + "px", g._updateList(i, !0), g._updateImgs(i)
-            } else {
-                var a = t + "_";
-                if (!i.selected[a]) return;
-                delete i.selected[a], re("wddb" + a + e), i.selCount && --i.selCount, i.full = 0, i.arrow.style.visibility = "", i.text.blur(), i.selCount ? (show(i.add), hide(i.text)) : (hide(i.add), show(i.text), g._updateTextInput(i)), g._updateList(i, !0)
-            }
-            var o = !i.opts.onChange || i.opts.onChange(-1, t),
-                r = 1 === o;
-            return 0 !== o && setTimeout(g._updateImgs.pbind(i, r), 0), d ? cancelEvent(d) : void 0
-        },
         focus: function (e) {
             g._focusText(cur.wdd[e])
         },
